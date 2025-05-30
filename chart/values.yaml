@@ -12,8 +12,8 @@ controllerManager:
         memory: 64Mi
   manager:
     image:
-      repository: controller
-      tag: latest
+      repository: ghcr.io/pradipbabar/imagesecretsyncoperator
+      tag: main
     resources:
       limits:
         cpu: 500m
