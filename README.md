@@ -37,7 +37,11 @@ In large Kubernetes clusters, teams often need to pull container images from pri
 1. **Deploy the Operator**
 
    ```bash
-   kubectl apply -f deploy/operator.yaml
+      helm install imagesecretsyncoperator \
+      https://raw.githubusercontent.com/Pradipbabar/ImageSecretSyncOperator/refs/heads/main/imagesecretsyncoperator-0.1.0.tgz \
+      --namespace image-secret-sync-operator \
+      --create-namespace
+
    ```
 
 2. **Create your `ClustRegCred`**
