@@ -1,0 +1,51 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - namespaces
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - secrets
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+- apiGroups:
+  - imageregistrycredential.pradix.io
+  resources:
+  - clustregcreds
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - imageregistrycredential.pradix.io
+  resources:
+  - clustregcreds/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - imageregistrycredential.pradix.io
+  resources:
+  - clustregcreds/status
+  verbs:
+  - get
+  - patch
+  - update

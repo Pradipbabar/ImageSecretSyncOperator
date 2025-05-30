@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- imageregistrycredential_v1alpha1_clustregcred.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples

@@ -1,0 +1,31 @@
+# permissions for end users to edit clustregcreds.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: clustregcred-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: imagesecretsyncoperator
+    app.kubernetes.io/part-of: imagesecretsyncoperator
+    app.kubernetes.io/managed-by: kustomize
+  name: clustregcred-editor-role
+rules:
+- apiGroups:
+  - imageregistrycredential.pradix.io
+  resources:
+  - clustregcreds
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - imageregistrycredential.pradix.io
+  resources:
+  - clustregcreds/status
+  verbs:
+  - get

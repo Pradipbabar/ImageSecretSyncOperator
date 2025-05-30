@@ -1,0 +1,13 @@
+apiVersion: imageregistrycredential.pradix.io/v1alpha1
+kind: ClustRegCred
+metadata:
+  name: sample-clustregcred
+  namespace: default
+spec:
+  email: user@example.com
+  namespaces:
+    - default
+  password: cHJhZGlw #base64 password
+  registry: https://index.docker.io/v1/
+  secretName: my-image-pull-secret
+  username: your-docker-usernameeee
